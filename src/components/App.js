@@ -2,7 +2,7 @@
 import React from "react";
 
 // Internal
-import List from "./List";
+import List from "./containers/List";
 
 const App = () => (
   <div className="row mt-5">
