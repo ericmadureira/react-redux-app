@@ -1,0 +1,22 @@
+// External
+import React from "react";
+import { connect } from "react-redux";
+
+// Get only the necessary part of the state and map it as a prop
+const mapStateToProps = state => (
+  { articles: state.articles }
+);
+
+const ConnectedList = ({ articles }) => (
+  <ul className="list-group list-group-flush">
+    {articles.map(el => (
+      <li className="list-group-item" key={el.id}>
+        {el.title}
+      </li>
+    ))}
+  </ul>
+);
+
+const List = connect(mapStateToProps)(ConnectedList);
+
+export default List;

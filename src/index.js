@@ -1,6 +1,16 @@
+// External
+import React from "react";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+
+// Internal
+import App from "./components/App";
 import store from "./store/index";
 
-import { addArticle } from "./actions/index";
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
 
-window.store = store;
-window.addArticle = addArticle;
+  document.getElementById("root")
+);
