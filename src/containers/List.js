@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 // Internal
-import ListItem from "./components/ListItem";
+import ListItem from "../components/ListItem";
 
 // Get only the necessary part of the state and map it as a prop
 const mapStateToProps = state => (

@@ -1,13 +1,17 @@
 // External
 import React from "react";
-import { Field } from "redux-form";
+import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
 
 // Internal
-import { addArticle } from "./actions/index";
+import { addArticle } from "../actions/index";
+
+const mapDispatchToProps = (dispatch) => (
+  { addArticle: article => dispatch(addArticle(article))}
+);
 
 const ConnectedForm = () => (
-  <form onSubmit={}>
+  <form>
     <div className="form-group">
       <label>Article</label>
       <div className="input-row">
@@ -19,8 +23,10 @@ const ConnectedForm = () => (
        </button>
     </div>
   </form>
-)
+);
 
 const AddArticleForm = connect(null, mapDispatchToProps)(ConnectedForm);
 
-export default AddArticleForm;
+export default reduxForm({
+  form: 'addArticleForm' // a unique identifier for this form
+})(AddArticleForm);
